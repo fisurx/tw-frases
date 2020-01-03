@@ -15,9 +15,15 @@ eq = soup.find_all("div", class_="contenido")
 
 
 res = list()
+frases = []
 
 for i in eq:
-    res.append(i.text)
+   res.append(i.text)
 
 for i in res:
     print i
+    frases.append(i)
+lista = res[0].split("\n")
+lista.pop(0)
+for i in lista:
+   print i
