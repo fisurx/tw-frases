@@ -8,9 +8,6 @@ headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20
 page = requests.get(url, headers=headers)
 soup = BeautifulSoup(page.content, "html.parser")
 
-#reemplazar = ["\xfa", "\xei", ]
-
-
 eq = soup.find_all("div", class_="contenido")
 
 
@@ -20,10 +17,10 @@ frases = []
 for i in eq:
    res.append(i.text)
 
-for i in res:
-    print i
-    frases.append(i)
 lista = res[0].split("\n")
 lista.pop(0)
-for i in lista:
-   print i
+
+frases = lista
+
+for i in frases:
+    print i
